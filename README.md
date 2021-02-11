@@ -38,3 +38,18 @@ struct vulcanfs {
 }
 ````
 
+The magic number is defined as hex code `0x0ECC`
+
+
+## Building
+VulcanFS is supposed to be used along with [VulcanOS](https://github.com/ice-bit/vulcanos), however you can build it manually using the following instructions:
+```sh
+$ make
+$ ./vulcanfs -f <file_path> -n <destination_name>
+```
+
+where `<file_path>` is the path of the local file and `<destination_name>` is 
+the name to give the file in the file system image(initrd). The cli tool accepts multiple files at once, for instance:
+```sh
+$ ./vulcanfs -f file1.txt -n file1 -f file2.txt -f file3.txt -n file2 -n file3
+```
